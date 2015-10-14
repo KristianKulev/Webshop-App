@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="webshopApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Webshop</title>
+				<!-- stylesheets -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/index.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
+
+				<!-- external scripts -->
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script type="text/javascript" src="bower_components/angular-breadcrumb/release/angular-breadcrumb.min.js"></script>
+	<script type="text/javascript" src="bower_components/angularUtils-pagination/dirPagination.js"></script>
+	<script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+				<!-- application -->
+	<script type="text/javascript" src="app/app.js"></script>
+				<!-- services -->
+	<script type="text/javascript" src="app/services/services.js"></script>
+	<script type="text/javascript" src="app/services/InfoDealingObject.js"></script>
+	<script type="text/javascript" src="app/services/InfoFetchingObject.js"></script>
+	<script type="text/javascript" src="app/services/InfoSendingObject.js"></script>
+	<script type="text/javascript" src="app/services/Catalogue.js"></script>
+	<script type="text/javascript" src="app/services/Product.js"></script>
+	<script type="text/javascript" src="app/services/Cart.js"></script>
+	<script type="text/javascript" src="app/services/SearchObject.js"></script>
+				<!-- controllers -->
+	<script type="text/javascript" src="app/controllers/controllers.js"></script>
+	<script type="text/javascript" src="app/controllers/MainCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/CarouselCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/CartCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/ProductsRangeCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/ProductDetailCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/OutOfStockCtrl.js"></script>
+				<!-- directives -->
+	<script type="text/javascript" src="app/directives/directives.js"></script>
+	<script type="text/javascript" src="app/directives/webshop-header.js"></script>
+	<script type="text/javascript" src="app/directives/webshop-top-offers.js"></script>
+	<script type="text/javascript" src="app/directives/webshop-footer.js"></script>
+	<script type="text/javascript" src="app/directives/order-summary.js"></script>
+	<script type="text/javascript" src="app/directives/add-to-cart.js"></script>
+				<!-- filters -->
+	<script type="text/javascript" src="app/filters/webshopFilters.js"></script>
+
+	<meta name="vieport" content="width=device-width,initial-scale=1"/>
+</head>
+
+<body>
+	<div class="container-fluid">
+
+		<div ui-view=""></div>
+
+		<webshop-footer></webshop-footer>
+	</div>
+</body>
+</html>
+
+
+
+

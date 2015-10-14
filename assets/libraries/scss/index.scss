@@ -1,0 +1,689 @@
+  @import "variables";
+  @import "mixins";
+
+  body{
+    background-color: $background-color;
+  }
+
+  a:link {
+    text-decoration: none;
+    color: black;
+  }
+
+  a:visited {
+    text-decoration: none;
+    color: black;
+  }
+
+  a:hover, a:active {
+    text-decoration: underline;
+    opacity: 0.9;
+    color: $color-standOut-pink;
+  }
+
+  a{
+    display: inline-block;
+  }
+
+  a.anchor {
+    display: block;
+    position: relative;
+    top: -175px;
+    visibility: hidden;
+    height: 1px;
+  }
+
+  #backToTop{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-size: 3.5em;
+    color: $color-standOut-pink;
+    border: 1px solid $color-standOut-pink;
+    @include border-radius(5px);
+    padding: 5px 10px;
+    z-index: 5;
+    cursor: pointer;
+  }
+  #backToTop:hover{
+    opacity: 0.5;
+  }
+  header{
+    text-align: center;
+    position: relative;
+    color: $font-color-regular;
+  }
+
+  #inner-header{
+    background-color: black;
+    height: 45px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 4;
+  }
+
+  #cart{
+    font-size: 1em;
+    float: right;
+    margin-right: 20px;
+    color: $color-standOut-pink;
+    .fa{
+      font-size: 3.2em;
+      position: relative;
+      span{
+        position: absolute;
+        top: 11px;
+        left: 13px;
+        font-size: 0.3em;
+        width: 25px;
+        padding: 0px;
+      }
+    }
+  }
+
+  #discountOffer{
+    font-size: 0.7em;
+    height: 30px;
+    @include vertical-align(50%, 30px);
+    margin-left: 20px;
+    span{
+      display: block;
+      margin-bottom: 5px;
+    }
+  }
+
+  #outer-header{
+    background-color: $background-color;
+    height: 100px;
+    margin: 65px 0 15px 0;
+    position: relative;
+
+    #header-leftSide{
+      margin-top: 20px;
+      h1{
+        margin: 0;
+        font-size: 3.5em;
+        span{
+          color: $color-standOut-pink;
+          font-size: 0.5em;
+        }
+      }
+      span {
+        color: black;
+
+        font-weight: 800;
+      }
+      height: 95px;
+      color: $color-menus;
+
+      i{
+        font-family: myFirstFont;
+      }
+      span{
+        font-size: 0.45em;
+      }
+      hr{
+        width: 1px;
+        height: 10px;
+        display: inline-block;
+        margin: 0 25px;
+        background-color: black;
+        border-style: none;
+      }
+    }
+
+    #header-rightSide{
+      #welcome{
+        color: black;
+        height: 40px;
+        font-size: 1.1em;
+        position: relative;
+        div{
+          height: 20px;
+          margin: 10px 0;
+        }
+        a{
+          clear: both;
+          display: inline-block;
+          margin: 0 20px;
+          margin-right: -125px;
+        }
+        a:last-of-type{
+          font-weight: bold;
+        }
+      }
+      #searchBar{
+        min-width: 250px;
+        height: 49px;
+        border: 2px ridge black;
+        display: inline-block;
+        i {
+          font-size: 1.5em;
+        }
+        a{
+          float: right;
+        }
+      }
+      input{
+        float: left;
+        height: 45px;
+        border: none;
+        display: inline-block;
+        padding: 8px;
+        padding-right: 0;
+        color: black;
+      }
+
+      button{
+        width:60px;
+        height: 45px;
+        border: none;
+      }
+    }
+
+  }
+
+  .clearSearch {
+    background-color: #e6007e;
+    height: 100%;
+    border-radius: 0 5px 5px 0;
+    padding: 0 5px;
+    cursor: pointer;
+    vertical-align: middle;
+    float: right;
+  }
+
+
+  .navbar{
+    background-image: none !important;
+    background-color: transparent;
+    color: black;
+    border: none;
+    .navbar-header{
+      height: 40px;
+      position: relative;
+    }
+    .navbar-toggle[aria-expanded="false"] {
+      background-color: transparent !important;
+    }
+    .navbar-toggle[aria-expanded="true"] {
+      background-color: black !important;
+    }
+    .navbar-toggle{
+      
+      @include absolute-align(180px, 40px, 50%, 50%)
+    }
+    .icon-bar{
+      background-color: $color-standOut-pink !important;
+      width: 100%;
+    }
+    button{
+      height: 35px;
+      div{
+        width: 50px;
+        margin: 0 auto;
+      }
+    }
+    button:hover   {
+      .icon-bar{
+        margin-top: 1px !important;
+      }
+    }
+
+    a:hover{
+      background-image: -webkit-linear-gradient(top,$color-standOut-pink-transp 10% 0,transparent 90%);
+      background-image: -o-linear-gradient(top,$color-standOut-pink-transp 0,transparent 90%);
+      background-image: -webkit-gradient(linear,left top,left bottom,from($color-standOut-pink-transp),to(transparent));
+      background-image: linear-gradient(to bottom,$color-standOut-pink-transp 10%, transparent 90%);
+    }
+  }
+  .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a{
+    text-shadow: none !important;
+  }
+  .navbar-inverse{
+    margin-top: 15px;
+  }
+  .navbar-inverse .navbar-nav > .active > a,
+  .navbar-inverse .navbar-nav > .active > a:hover,
+  .navbar-inverse .navbar-nav > .active > a:focus {
+    color: $font-color-regular;
+    background-color: $color-menus;
+  }
+  .navbar-inverse .navbar-nav > li > a:hover,
+  .navbar-inverse .navbar-nav > li > a:focus {
+    color: $color-menus;
+    text-shadow: 0 3px 0 rgba(0,0,0,.17) !important;
+  }
+
+
+  hr{
+    margin: 25px;
+
+    background-color: #E4E4E4;
+    border-width: 1px;
+    border-style: ridge;
+  }
+  article {
+    h1 {
+      overflow: hidden;
+      text-align: center;
+      font-size: 1em;
+      width: 95%;
+      margin: 30px auto;
+    }
+    h1:before,
+    h1:after {
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+      content: "";
+      display: inline-block;
+      height: .1em;
+      position: relative;
+      vertical-align: middle;
+      width: 50%;
+      margin-bottom: .15em;
+    }
+    h1:before {
+      right: 0.5em;
+      margin-left: -50%;
+    }
+    h1:after {
+      left: 0.5em;
+      margin-right: -50%;
+    }
+    #top-offers {
+      margin: 15px 0;
+      div {
+        text-align: center;
+        min-height: 100px;
+        padding: 5px;
+        div {
+          padding: 15px;
+          overflow: hidden;
+          border: 1px ridge $color-beige;
+        }
+        span {
+          margin: 0 5px;
+          padding: 8px;
+          font-size: 1.2em;
+        }
+      }
+    }
+    #offer-one {
+      background-color: black;
+    }
+
+    #offer-two {
+      background-color: $color-flat-pink;
+    }
+
+    #offer-three {
+      background-color: white;
+    }
+
+    #offer-two, #offer-one {
+      color: white;
+    }
+    .offer-conditions {
+      font-size: 0.7em !important;
+      border: none !important;
+      display: inline;
+    }
+  }
+  .carousel {
+      .carousel-control.left {
+        background-image: -webkit-linear-gradient(left,$color-standOut-pink-transp 0,rgba(0,0,0,.0001) 100%);
+        background-image: -o-linear-gradient(left,$color-standOut-pink-transp 0,rgba(0,0,0,.0001) 100%);
+        background-image: -webkit-gradient(linear,left top,right top,from($color-standOut-pink-transp),to(rgba(0,0,0,.0001)));
+        background-image: linear-gradient(to right,$color-standOut-pink-transp 0,rgba(0,0,0,.0001) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+        background-repeat: repeat-x;
+      }
+
+      .carousel-control.right{
+        background-image: -webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,$color-standOut-pink-transp 100%);
+        background-image: -o-linear-gradient(left,rgba(0,0,0,.0001) 0,$color-standOut-pink-transp 100%);
+        background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.0001)),to($color-standOut-pink-transp));
+        background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,$color-standOut-pink-transp 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+        background-repeat: repeat-x;
+      }
+      .carousel-indicators li {
+        background-color: $color-menus;
+      }
+      .carousel-indicators .active {
+        background-color: $color-standOut-pink;
+      }
+      .carousel-control:hover{
+        i{
+          color: $color-flat-pink;
+        }
+      }
+      .carousel-control{
+        i{
+          color: $color-menus;
+        }
+      }
+  }
+
+
+  footer{
+    #contact-icons{
+      font-size: 2.8em;
+      li{
+        display: inline-block;
+      }
+      a{
+        display: block;
+        width: 33px;
+        margin: 0 auto;
+      }
+      a:hover{
+        color: $color-standOut-pink-transp;
+      }
+    }
+    #site-info{
+      ul{
+        text-align: center;
+      }
+    }
+  }
+  
+  .product-small-container{
+    margin: 15px 0;
+  }
+  .product-small{
+    border: 1px solid $color-beige;
+    max-width: 240px;
+    margin: 0 auto;
+    @include border-radius(5px);
+    .img-container-small{
+      display: block;
+      margin: 0 auto;
+      padding: 3px;
+    }
+    .product-title{
+      min-height: 40px;
+      height: auto !important;
+      font-size: 0.9em;
+      font-weight: 700;
+      margin: 15px 8px;
+      text-align: center;
+    }
+
+    .product-price-container{
+      margin-top: 15px;
+      margin-bottom: 5px;
+      text-align: center;
+      .product-price{
+        font-size: 1em;
+        font-weight: 700;
+      }
+    }
+    .product-preferences{
+      padding: 4px;
+      padding-top: 0;
+      font-size: 1.2em;
+      height: 30px;
+      width: 100%;
+      i:not(.fa){
+        font-size: 0.8em;
+      }
+    }
+  }
+
+  .product-price-before-discount{
+    height: 20px;
+    color: $color-flat-pink;
+    text-decoration: line-through;
+    text-align: center;
+  }
+  .breadcrumb{
+    margin: 10px;
+  }
+  .pagination-sm{
+    float: left;
+    margin: 10px 0 0 0;
+    margin-left: 15px;
+  }
+  #paginatorTop{
+    height: 40px;
+  }
+  #selectPerPage{
+    height: 40px;
+    div{
+      width: 180px;
+      margin: 0 auto;
+      float: right;
+    }
+
+  }
+  #cart-container{
+    .alert-info{
+      background-color: $color-standOut-pink-transp !important;
+      border-color: $color-standOut-pink !important;
+      background-image: none !important;
+      position: relative;
+      color: black !important;
+      display: inline-block;
+      padding-right: 35px;
+      i{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 1.5em;
+        cursor: pointer;
+      }
+    }
+    hr{
+      margin: 10px;
+    }
+    font-size: 0.9em;
+    #empty-cart{
+
+    }
+    #order-summary{
+      float: right;
+      font-size: 2em;
+      margin: 15px;
+    }
+
+  }
+
+  .btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+    cursor: not-allowed;
+    pointer-events: bounding-box;
+    opacity: .65;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  button{
+    background-image: -webkit-linear-gradient(top, $color-standOut-pink, black, 130%) !important;
+    background-image: -o-linear-gradient(top, $color-standOut-pink, black, 130%) !important;
+    background-image: -webkit-gradient(linear,top,from($color-standOut-pink),to(black)) !important;
+    background-image: linear-gradient(to top, black, $color-standOut-pink 130%) !important;
+    color: $font-color-regular;
+    clear: both;
+    display: block;
+    float: right;
+  }
+
+  button:hover{
+    opacity: 0.9;
+  }
+
+  #cart-map{
+    span{
+      padding-top: 5px;
+
+    }
+  }
+  .product-in-cart{
+    .img-in-cart{
+      div, h3{
+        display: inline-block;
+        font-size: 1.2em;
+        margin: 0;
+        float: left;
+      }
+      img, h3 {
+        margin: 0 5px;
+        max-width: 85px;
+      }
+      img{
+        max-height: 45px;
+      }
+
+    }
+    input, .remove-from-cart{
+      padding: 0;
+      text-align: center;
+    }
+    input{
+      width: 45px;
+    }
+    .remove-from-cart{
+      font-size: 2em;
+    }
+    .remove-from-cart:hover{
+      cursor: pointer;
+      color: $color-standOut-pink;
+    }
+
+  }
+  .checkout-btn{
+    clear: both;
+    float: right;
+    display: block;
+  }
+  .noColorChangeOnHover:hover{
+    color: initial;
+    button{
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+
+  #searchResults{
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid #DDDDDD;
+    height: 33px;
+    margin-bottom: 20px;
+    min-width: 270px;
+    span{
+      div{
+        display: inline;
+      }
+      font-size: 1.1em;
+      white-space: nowrap;
+      padding: 5px 5px;
+      display: inline-block;
+      max-width: 215px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    i{
+      font-weight: 700;
+    }
+  }
+
+  .add-to-cart{
+    float: left;
+    display: inline-block;
+  }
+  .add-to-favourites{
+    display: inline-block;
+    float: right;
+    font-size: inherit !important;
+    padding: 0 !important;
+  }
+
+  .techSpecs{
+    padding: 5px;
+    font-size: 0.7em;
+    margin: 5px;
+    div{
+      display: inline-block;
+      width: 180px;
+    }
+    i{
+      margin: 10px;
+      font-size: 0.6em;
+      font-weight: 900;
+    }
+
+    i, span{
+      float: left;
+    }
+  }
+
+  .product-big{
+    max-width: 640px;
+    min-height: 500px;
+    font-size: 2em;
+    @include border-radius(5px);
+    border: 1px solid $color-beige;
+    padding: 10px;
+    text-align: center;
+    .product-title{
+      font-size: 0.9em;
+      text-align: center;
+      word-wrap: break-word;
+    }
+    .product-price-before-discount{
+      height: auto;
+    }
+    img{
+      max-width: 300px !important;
+      margin: 10px auto;
+      max-height: 230px !important;
+    }
+    ul, #additional-info-container, .additional-info{
+      text-align: left;
+    }
+    button{
+      width: 100%;
+      max-width: 285px;
+      padding: 0 2px;
+      font-size: 0.8em;
+      height: 50px;
+      margin: 10px auto;
+      float: none !important;
+    }
+
+
+    .additionalImages{
+      margin: 10px 0;
+      text-align: center;
+      img{
+        max-width: 100px !important;
+        margin: 0 10px;
+        max-height: 75px !important;
+      }
+      li{
+        display: inline-block;
+        img:hover{
+          cursor: pointer;
+        }
+      }
+
+    }
+
+    .additional-info{
+      font-size: 0.5em;
+      padding: 10px 25px;
+    }
+
+    .product-title{
+      font-weight: 700;
+    }
+    .product-preferences{
+      margin: 0 auto;
+      max-width: 300px;
+    }
+  }

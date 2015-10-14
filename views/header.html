@@ -1,0 +1,67 @@
+<div class="container-fluid" id="header-content">
+    <header>
+        <i id="backToTop" class="fa fa-arrow-up" ng-click="scrollTo('body')"></i>
+        <div id="inner-header">
+            <div id="discountOffer" class="hidden-xs">
+                <span>15% Student Discount!</span><span>Get Your Code NOW!</span>
+            </div>
+            <a ui-sref="main.cart.content" id="cart">
+                <span>Total in cart: </span>
+                <i id="current-sum">{{ cart.getItemsSum() | currency:"BGN " }}</i>
+                <i class="fa fa-shopping-cart"><span class="badge">{{ cart.getAbsoluteItemsCount() }}</span></i>
+            </a>
+        </div>
+        <div id="outer-header" class="row">
+            <div id="header-leftSide" class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
+                <h1><i>WebShop</i><span>.com</span></h1>
+                <div><span>TWENTYFOUR</span><hr><span>SEVEN</span><hr><span>SHOPPING</span></div>
+            </div>
+            <div id="header-rightSide" class="col-xs-12 col-sm-5 col-sm-offset-2 col-md-4 col-md-offset-4 col-lg-3 col-lg-offset-6">
+                <div>
+                    <div id="welcome">
+                        <div>
+                            <a ui-sref="main.cart.content">CHECKOUT</a>
+                        </div>
+                    </div>
+                    <div id="searchBar">
+                        <input type="text" ng-model="queryInput.value" name="search-word" placeholder="Search..."/>
+                        <a ui-sref="main.products({ '#': 'range' })" ng-click="searchObject.doSearch()"><button><i class="fa fa-search"></i></button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="col-xs-12 navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#webshopNavbar">
+                        <div>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </div>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="webshopNavbar">
+                    <ul class="nav navbar-nav">
+                        <li ui-sref="main.home" ui-sref-active-eq="active"><a href="">Home</a></li>
+                        <li ui-sref="main.products" ui-sref-active="active"><a href="">Communication</a></li>
+                        <li class="dropdown" ui-sref="main.outOfStock" ui-sref-active="active">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="">Computers<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="">PCs</a></li>
+                                <li><a href="">Laptops</a></li>
+                                <li><a href="">Notebooks</a></li>
+                                <li><a href="">Ultrabooks</a></li>
+                            </ul>
+                        </li>
+                        <li ui-sref="main.outOfStock" ui-sref-active="active"><a href="">TVs & Audio</a></li>
+                        <li ui-sref="main.outOfStock" ui-sref-active="active"><a href="">Game Consoles</a></li>
+                        <li ui-sref="main.cart.content" ui-sref-active-eq="active"><a href="">To My Cart</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <hr>
+    </header>
+    <webshop-top-offers></webshop-top-offers>
+</div>

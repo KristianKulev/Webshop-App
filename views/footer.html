@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <footer>
+        <hr>
+        <ul id="contact-icons" class="row">
+            <li ng-repeat="icon in ['fa fa-tumblr-square', 'fa fa-linkedin-square',	'fa fa-twitter-square', 'fa fa-instagram', 'fa fa-google-plus-square', 'fa fa-youtube-square', 'fa fa-pinterest-square', 'fa fa-facebook-square']"
+                class="col-xs-3 col-sm-1" ng-class="{'col-xs-3 col-sm-1 col-sm-offset-2':$first}"><a href=""><i ng-class="icon"></i></a></li>
+        </ul>
+        <hr>
+        <div class="row" id="site-info">
+            <ul class="col-xs-6 col-sm-3" ng-repeat="sectionName in ['HOW CAN WE HELP', 'INFORMATION', 'DELIVERY', 'ABOUT US']">
+                <h4><strong>{{ sectionName }}</strong></h4>
+                <li ng-repeat="i in [1, 2, 3, 4]">
+                    <a href="">About us</a>
+                </li>
+            </ul>
+        </div>
+        <hr>
+    </footer>
+</div>

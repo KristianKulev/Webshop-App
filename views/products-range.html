@@ -1,0 +1,47 @@
+<webshop-header></webshop-header>
+<div class="container-fluid">
+	<div id="product-range">
+		<a class="anchor" id="range"></a>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6">
+				<div id="searchResults" ng-show="searchObject.getQuery()">
+					<span>Search results for: <i>{{ searchObject.getQuery() }}</i></span>
+					<button class="clearSearch" ng-click="searchObject.clearSearch()">Clear</button>
+				</div>
+			</div>
+			<div id="selectPerPage" class="col-xs-12 col-sm-3  col-sm-push-3">
+				<div>
+					<span>Products per page: </span>
+					<select ng-model="selectPerPage">
+						<option value="25">25</option>
+						<option value="10" ng-selected="true">10</option>
+						<option value="5">5</option>
+						<option value="2">2</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<dir-pagination-controls id="paginatorTop"></dir-pagination-controls>
+		</div>
+		<div id="product-list" class="row">
+			<div class="product-small-container col-xs-6 col-sm-4 col-md-3 col-lg-2" dir-paginate="product in products | filter: searchObject.getQuery() | itemsPerPage:selectPerPage">
+				<div class="product-small">
+					<a ui-sref="main.productId({ '#': getParsedUrl(product.title), productId: product.id})" class="img-container-small">
+						<img ng-src="{{'http://shop.dev.ittalents.bg/' + product.images[0]}}" class="img-responsive center-block" alt="{{product.title}}">
+						<h4 class="product-title">{{ product.title }}</h4>
+					</a>
+					<div class="product-price-before-discount">{{ product.price + 25 }}<span class="currency"> BGN</span></div>
+					<div class="product-price-container">
+						<i class="product-price">{{ product.price }}<span class="currency"> BGN</span></i>
+					</div>
+					<add-to-cart></add-to-cart>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<dir-pagination-controls></dir-pagination-controls>
+		</div>
+	</div>
+</div>
+

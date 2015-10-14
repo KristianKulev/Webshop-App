@@ -1,0 +1,43 @@
+<webshop-header></webshop-header>
+<div class="container-fluid">
+	<div class="product-big center-block img-responsive">
+		<a class="anchor" id="product-details"></a>
+		<div class="additionalImages col-xs-12">
+			<ul>
+				<li ng-repeat="img in product.images track by $index">
+					<img ng-src="{{'http://shop.dev.ittalents.bg/' + img}}" ng-click="product.setImage(img)" alt="{{ product.title }}">
+				</li>
+			</ul>
+		</div>
+		<hr>
+		<div class="row">
+			<h4 class="product-title col-xs-12 col-sm-6">{{ product.title }}</h4>
+			<div class="product-price-before-discount col-xs-12 col-sm-6">{{ product.price + 25 }}<span class="currency"> BGN</span></div>
+		</div>
+		<div class="row">
+			<div class="big-img-holder col-xs-12 col-sm-6">
+				<img ng-src="{{'http://shop.dev.ittalents.bg/' + product.mainImgUrl}}" alt="{{ product.title }}">
+			<add-to-cart></add-to-cart>
+			</div>
+			<div class="col-xs-12 col-sm-6">
+				<button class="btn-lg" ng-click="sendingObject.sendInfoToServer(product, cart)">
+					<div class="product-price-container">
+						<i>Buy for </i>
+						<i class="product-price">{{ product.price }}</i><span class="currency"> BGN</span>
+					</div>
+				</button>
+				<div>
+					<div>Technical specs:</div>
+					<div class="techSpecs">
+						<div ng-repeat="infoLine in product.infoList track by $index"><i class="fa fa-check-square-o"></i><span>{{ infoLine }}</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div id="additional-info-container" class="col-xs-12">Additional info:</div>
+			<span class="additional-info col-xs-12">{{ product.description }}</span>
+		</div>
+	</div>
+</div>

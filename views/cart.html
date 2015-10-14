@@ -1,0 +1,49 @@
+<webshop-header></webshop-header>
+<div class="container-fluid">
+	<div id="cart-container">
+		<a class="anchor" id="cart-details"></a>
+		<div ng-show="cart.getParsedItems().length">
+			<div class="alert alert-info" ng-hide="hideMessage">
+				<span><i class="glyphicon glyphicon-remove-sign" ng-click="hideMessage=true"></i></span>
+				<strong>Read me!</strong></br> Because of some limitations on the server API, changes in this view aren't sent there.
+			</div>
+		</div>
+		<div id="cart-map" class="row">
+			<span class="col-xs-4 col-sm-4">Product name</span>
+			<span class="col-xs-2 col-sm-1 col-sm-offset-4">Amount</span>
+			<span class="col-xs-2 col-sm-1">Price</span>
+			<span class="col-xs-2 col-sm-1">Total</span>
+			<span class="col-xs-2 col-sm-1">Remove</span>
+		</div>
+		<hr>
+		<div id="empty-cart" ng-show="!cart.getParsedItems().length">Your cart is empty.</div>
+		<div id="cart-content">
+			<div class="product-in-cart row" ng-repeat="product in cart.getParsedItems() track by $index">
+				<div class="col-xs-4 col-sm-4">
+					<a href="{{'#/products/' + product.info.id + '#product-details'}}"  class="img-in-cart">
+						<div class="">
+							<img ng-src="{{'http://shop.dev.ittalents.bg/' + product.info.images[0]}}" alt="{{ product.info.title }}">
+						</div>
+						<h3 class="product-title">{{ product.info.title }}</h3>
+					</a>
+				</div>
+				<span class="col-xs-2 col-sm-1 col-sm-offset-4">
+					<input type="number" ng-model="product.amount" ng-change="cart.updateSum({price: product.info.price, value: product.amount}, '{{ product.amount }}')"
+					   min="{{ cart.buyCountPerProductLimit().min }}" max="{{ cart.buyCountPerProductLimit().max }}" value="{{product.amount}}">
+				</span>
+				<div class="product-price-container col-xs-2 col-sm-1">
+					<i class="product-price">{{ product.info.price }}</i><span class="currency"> BGN</span>
+				</div>
+				<div class="product-price-container col-xs-2 col-sm-1">
+					<i class="product-price">{{ cart.getCurrentItemSum({price: product.info.price, amount: product.amount}) | currency:"BGN " }}</i>
+				</div>
+				<span class="remove-from-cart glyphicon glyphicon-remove-sign col-xs-2 col-sm-1" ng-click="cart.removeProduct(product.info.id)"></span>
+				<hr class="col-xs-12">
+			</div>
+		</div>
+		<order-summary ng-show="cart.getParsedItems().length"></order-summary>
+		<a class="checkout-btn" ui-sref="main.cart.checkout" ng-show="cart.getParsedItems().length" ng-click="cart.checkout()"><button class="btn-lg">Checkout!</button></a>
+	</div>
+</div>
+
+

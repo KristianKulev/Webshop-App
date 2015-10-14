@@ -1,0 +1,19 @@
+@mixin absolute-align($width, $height, $top, $left){
+  width: $width;
+  height: $height;
+  position: absolute;
+  top: $top;
+  left: $left;
+  margin-left: -$width / 2;
+  margin-top: -$height / 2;
+}
+
+@mixin vertical-align($top, $height){
+  position: absolute;
+  top: $top;
+  margin-top: -$height / 2;
+}
+
+@mixin border-radius($radius){
+  border-radius: $radius;
+}
