@@ -12,5 +12,3 @@ To open the Webshop project in the browser, follow the steps bellow:
 -this will start a server ot port 8080;
 
 4. The start page of the Webshop will be visible at: http://localhost:8080/#/home/top-products
-
-<div class=\"arrow-down\"/></div>
