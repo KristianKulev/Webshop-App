@@ -17,19 +17,19 @@
         <div id="cart-content">
             <div class="product-in-cart row" ng-repeat="product in cart.getCachedItems()">
                 <div class="col-xs-5 col-sm-5">
-                    <a href="{{'#/products/' + product.info.id + '#product-details'}}" class="img-in-cart">
+                    <a href="{{::'#/products/' + product.info.id + '#product-details'}}" class="img-in-cart">
                         <div class="">
-                            <img ng-src="{{'http://shop.dev.ittalents.bg/' + product.info.images[0]}}" alt="{{ product.info.title }}">
+                            <img ng-src="{{::'http://shop.dev.ittalents.bg/' + product.info.images[0]}}" alt="{{ ::product.info.title }}">
                         </div>
-                        <h3 class="product-title">{{ product.info.title }}</h3>
+                        <h3 class="product-title">{{ ::product.info.title }}</h3>
                     </a>
                 </div>
-                <div class="product-preferences col-xs-2 col-sm-1 col-sm-offset-4">{{ product.amount }}</div>
+                <div class="product-preferences col-xs-2 col-sm-1 col-sm-offset-4">{{ ::product.amount }}</div>
                 <div class="product-price-container col-xs-2 col-sm-1">
-                    <i class="product-price">{{ product.info.price }}</i><span class="currency"> BGN</span>
+                    <i class="product-price">{{ ::product.info.price }}</i><span class="currency"> BGN</span>
                 </div>
                 <div class="product-price-container col-xs-2 col-sm-1">
-                    <i class="product-price">{{ product.amount * product.info.price }}</i><span class="currency"> BGN</span>
+                    <i class="product-price">{{ ::product.amount * product.info.price }}</i><span class="currency"> BGN</span>
                 </div>
                 <hr class="col-xs-12">
             </div>

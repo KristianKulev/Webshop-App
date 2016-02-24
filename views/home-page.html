@@ -14,24 +14,24 @@
 				<div class="product-big center-block img-responsive">
 					<a class="noColorChangeOnHover" ui-sref="main.productId({ '#': getParsedUrl(product.title), productId: product.id})">
 						<div class="row">
-							<h4 class="product-title col-xs-12 col-sm-6">{{ product.title }}</h4>
-							<div class="product-price-before-discount col-xs-12 col-sm-6">{{ product.price + 25 }}<span class="currency"> BGN</span></div>
+							<h4 class="product-title col-xs-12 col-sm-6">{{ ::product.title }}</h4>
+							<div class="product-price-before-discount col-xs-12 col-sm-6">{{ ::product.price + 25 }}<span class="currency"> BGN</span></div>
 						</div>
 						<div class="row">
 							<div class="big-img-holder col-xs-12 col-sm-6">
-							<img ng-src="{{'http://shop.dev.ittalents.bg/' + product.images[0]}}" alt="{{ product.title }}">
+							<img ng-src="{{::'http://shop.dev.ittalents.bg/' + product.images[0]}}" alt="{{ ::product.title }}">
 								</div>
 							<div class="col-xs-12 col-sm-6">
 								<button class="btn-lg">
 									<div class="product-price-container">
 										<i>Buy for </i>
-										<i class="product-price">{{ product.price }}</i><span class="currency"> BGN</span>
+										<i class="product-price">{{ ::product.price }}</i><span class="currency"> BGN</span>
 									</div>
 								</button>
 								<div>
 									<div>Technical specs:</div>
 									<div class="techSpecs">
-										<div ng-repeat="infoLine in info"><i class="fa fa-check-square-o"></i><span>{{ infoLine }}</span></div>
+										<div ng-repeat="infoLine in info"><i class="fa fa-check-square-o"></i><span>{{ ::infoLine }}</span></div>
 									</div>
 								</div>
 							</div>

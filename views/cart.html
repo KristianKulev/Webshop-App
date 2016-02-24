@@ -20,22 +20,22 @@
 		<div id="cart-content">
 			<div class="product-in-cart row" ng-repeat="product in cart.getParsedItems() track by $index">
 				<div class="col-xs-4 col-sm-4">
-					<a href="{{'#/products/' + product.info.id + '#product-details'}}"  class="img-in-cart">
+					<a href="{{::'#/products/' + product.info.id + '#product-details'}}"  class="img-in-cart">
 						<div class="">
-							<img ng-src="{{'http://shop.dev.ittalents.bg/' + product.info.images[0]}}" alt="{{ product.info.title }}">
+							<img ng-src="{{'http://shop.dev.ittalents.bg/' + product.info.images[0]}}" alt="{{ ::product.info.title }}">
 						</div>
-						<h3 class="product-title">{{ product.info.title }}</h3>
+						<h3 class="product-title">{{ ::product.info.title }}</h3>
 					</a>
 				</div>
 				<span class="col-xs-2 col-sm-1 col-sm-offset-4">
-					<input type="number" ng-model="product.amount" ng-change="cart.updateSum({price: product.info.price, value: product.amount}, '{{ product.amount }}')"
-					   min="{{ cart.buyCountPerProductLimit().min }}" max="{{ cart.buyCountPerProductLimit().max }}" value="{{product.amount}}">
+					<input type="number" ng-model="product.amount" ng-change="cart.updateSum({price: product.info.price, value: product.amount}, '{{ ::product.amount }}')"
+					   min="{{ ::cart.buyCountPerProductLimit().min }}" max="{{ ::cart.buyCountPerProductLimit().max }}" value="{{::product.amount}}">
 				</span>
 				<div class="product-price-container col-xs-2 col-sm-1">
-					<i class="product-price">{{ product.info.price }}</i><span class="currency"> BGN</span>
+					<i class="product-price">{{ ::product.info.price }}</i><span class="currency"> BGN</span>
 				</div>
 				<div class="product-price-container col-xs-2 col-sm-1">
-					<i class="product-price">{{ cart.getCurrentItemSum({price: product.info.price, amount: product.amount}) | currency:"BGN " }}</i>
+					<i class="product-price">{{ ::cart.getCurrentItemSum({price: product.info.price, amount: product.amount}) | currency:"BGN " }}</i>
 				</div>
 				<span class="remove-from-cart glyphicon glyphicon-remove-sign col-xs-2 col-sm-1" ng-click="cart.removeProduct(product.info.id)"></span>
 				<hr class="col-xs-12">

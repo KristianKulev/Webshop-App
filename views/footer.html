@@ -8,7 +8,7 @@
         <hr>
         <div class="row" id="site-info">
             <ul class="col-xs-6 col-sm-3" ng-repeat="sectionName in ['HOW CAN WE HELP', 'INFORMATION', 'DELIVERY', 'ABOUT US']">
-                <h4><strong>{{ sectionName }}</strong></h4>
+                <h4><strong>{{ ::sectionName }}</strong></h4>
                 <li ng-repeat="i in [1, 2, 3, 4]">
                     <a href="">About us</a>
                 </li>
